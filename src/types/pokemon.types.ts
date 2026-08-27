@@ -1,0 +1,64 @@
+enum EXP_ENUM {
+    slow = 0.65,
+    normal = 1,
+    fast = 1.2
+}
+
+export type PokemonType =
+    | "normal" | "fire" | "water" | "grass" | "electric"
+    | "ice" | "fighting" | "poison" | "ground" | "flying"
+    | "psychic" | "bug" | "rock" | "ghost" | "dragon"
+    | "steel" | "dark" | "fairy";
+
+export interface BattleStats {
+    hp: number;
+    attack: number;
+    defence: number;
+    overshield?: number | null;
+}
+
+export interface BattleMoves {
+    aa_damage: number;
+    aa_cooldown: number;
+    special_move_id: string;
+    special_move_cooldown: number;
+}
+
+export interface GenericPokemon {
+    id: number;
+    name: string;
+
+    level: number;
+
+    sprite_url: string;
+
+    stats: BattleStats;
+    moves: BattleMoves;
+
+    is_mega: boolean;
+    is_dynamax: boolean;
+
+    primary_type: PokemonType;
+    secondary_type?: PokemonType | null;
+
+    is_legendary?: boolean;
+    is_mythical?: boolean;
+    is_special?: boolean;
+    is_shiny: boolean;
+}
+
+export interface PlayerPokemon extends GenericPokemon {
+    current_exp: number;
+    exp_group: EXP_ENUM;
+    held_item: string | null;
+}
+
+export interface EnemyPokemon extends GenericPokemon {
+    //false if explicitly uncatchable
+    catch_rate: number | false;
+
+    is_boss: boolean;
+    is_alpha: boolean;
+
+    drop_gold_amount: number;
+}
