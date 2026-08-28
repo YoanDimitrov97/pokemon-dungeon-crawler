@@ -1,4 +1,4 @@
-enum EXP_ENUM {
+export enum EXP_ENUM {
     slow = 0.65,
     normal = 1,
     fast = 1.2

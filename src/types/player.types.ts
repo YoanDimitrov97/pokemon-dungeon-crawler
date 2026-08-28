@@ -5,7 +5,7 @@ export interface Item {
     id: number;
     name: string;
     description: string;
-    rarity: string;
+    rarity: "common" | "rare" | "epic" | "legendary";
 
     buy_price: number;
     sell_price: number;
@@ -19,7 +19,7 @@ export interface PlayerInstance {
     gems: number;
 
     party: PlayerPokemon[];
-    party_size: PartySize
+    party_size: PartySize;
     inventory: Inventory;
 
     current_floor: number;
