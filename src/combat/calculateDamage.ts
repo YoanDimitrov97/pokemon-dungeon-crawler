@@ -6,8 +6,8 @@ const STANDARD_CRIT_MULTIPLIER: number = 1.5;
 export function calculateDamage(base_damage: number, attack_type: PokemonType, is_crit: boolean, attacker: GenericPokemon, target: GenericPokemon): number {
     // Calculate damage before any multipliers
     const level_component: number = (((attacker.level * 2) / 5) + 2) / 50;
-    const attacker_power: number = attacker.stats.attack;
-    const target_defence: number = target.stats.defence;
+    const attacker_power: number = attacker.base_stats.attack;
+    const target_defence: number = target.base_stats.defence;
 
     let final_damage: number = (level_component * base_damage * (attacker_power / target_defence)) + 2;
 

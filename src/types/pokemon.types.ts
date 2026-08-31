@@ -10,10 +10,14 @@ export type PokemonType =
     | "psychic" | "bug" | "rock" | "ghost" | "dragon"
     | "steel" | "dark" | "fairy";
 
-export interface BattleStats {
+export interface BaseStats {
     hp: number;
     attack: number;
     defence: number;
+}
+
+export interface CurrentStats {
+    current_hp: number;
     overshield?: number | null;
 }
 
@@ -32,18 +36,18 @@ export interface GenericPokemon {
 
     sprite_url: string;
 
-    stats: BattleStats;
+    base_stats: BaseStats;
     moves: BattleMoves;
 
-    is_mega: boolean;
-    is_dynamax: boolean;
 
     primary_type: PokemonType;
     secondary_type?: PokemonType | null;
 
-    is_legendary?: boolean;
-    is_mythical?: boolean;
-    is_special?: boolean;
+    is_mega: boolean;
+    is_dynamax: boolean;
+    is_legendary: boolean;
+    is_mythical: boolean;
+    is_special: boolean;
     is_shiny: boolean;
 }
 
