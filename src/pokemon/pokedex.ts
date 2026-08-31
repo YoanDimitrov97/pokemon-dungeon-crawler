@@ -1,5 +1,31 @@
 import type { GenericPokemon } from "@/types/pokemon.types";
-//TODO: pokemonFactory based approach, so that we can omit typing the optional
-//TODO: game-irrelevant fields
-export const POKEDEX: Record<string, GenericPokemon> = {
+import type { SpeciesInput } from "./pokemonFactory";
+import { pokemonFactory } from "./pokemonFactory";
+
+export const POKEDEX = {
+    //? Define pokemon like this
+    //? Keys must be quoted incase of names including characters not allowed 
+    //? in standard JS variable names such as hyphens, spaces and punctuation
+
+    //? attack = (Attack + Special Attack) / 2; same goes for defence
+    'bulbasaur': pokemonFactory({
+        id: 1,
+        name: "Bulbasaur",
+        level: 1,
+        sprite_url: 'fill later',
+        base_stats: {
+            hp: 45,
+            attack: 57,
+            defence: 57
+        },
+        moves: {
+            aa_damage: 5,
+            aa_cooldown: 300,
+            special_move_id: "tackle",
+            special_move_cooldown: 2000
+        },
+        primary_type: "grass",
+        secondary_type: "poison",
+    })
+
 } satisfies Record<string, GenericPokemon>;
