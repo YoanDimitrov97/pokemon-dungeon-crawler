@@ -1,4 +1,4 @@
-import type { GenericPokemon } from "./pokemon.types";
+import type { GenericPokemon, PokemonType } from "./pokemon.types";
 
 export interface MoveResult {
     damage?: number;
@@ -12,3 +12,9 @@ export type MoveFunction = (
     target: GenericPokemon
 ) => MoveResult;
 
+export interface MoveInput {
+    name: string;
+    base_damage: number;
+    type: PokemonType;
+    crit_chance?: number;
+}
