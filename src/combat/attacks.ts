@@ -22,6 +22,21 @@ export const MOVE_REGISTRY = {
             is_crit,
             message
         }
+    },
+
+    'ember': (attacker, target): MoveResult => {
+        const move_type: PokemonType = 'fire';
+        const base_damage: number = 40;
+        const is_crit: boolean = Math.random() <= NORMAL_CRIT_CHANCE;
+        const message: string = `${attacker.name} used ember!`;
+
+        const final_damage: number = calculateDamage(base_damage, move_type, is_crit, attacker, target);
+
+        return {
+            damage: final_damage,
+            is_crit,
+            message
+        }
     }
 
 } satisfies Record<string, MoveFunction>;

@@ -26,6 +26,25 @@ export const POKEDEX = {
         },
         primary_type: "grass",
         secondary_type: "poison",
+    }),
+
+    'charmander': pokemonFactory({
+        id: 4,
+        name: "Charmander",
+        level: 1,
+        sprite_url: 'fill later',
+        base_stats: {
+            hp: 39,
+            attack: 56,
+            defence: 46
+        },
+        moves: {
+            aa_damage: 5,
+            aa_cooldown: 300,
+            special_move_id: "ember",
+            special_move_cooldown: 2000
+        },
+        primary_type: "fire",
     })
 
 } satisfies Record<string, GenericPokemon>;
