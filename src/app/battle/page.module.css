@@ -1,0 +1,53 @@
+.battlePage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* overflow: hidden; */
+}
+
+.bgTexture {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.1;
+  pointer-events: none;
+  background-image: url('/battle-bg.jpg');
+  background-size: 600px 350px;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.vignetteScanline {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  /* Scanline horizontal lines */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.2) 50%,
+    rgba(0, 0, 0, 0.2)
+  );
+  background-size: 100% 4px;
+}
+
+.battleContainer {
+ height:100vh;
+ width: 35vw;
+ @media (max-width: 1366px){
+    width: 45vw;
+ }
+ overflow: hidden;
+ z-index: 5;
+ position: relative;
+ background-color: var(--background);
+
+ display:flex;
+ flex-direction: column;
+ align-items: center;
+}
+
