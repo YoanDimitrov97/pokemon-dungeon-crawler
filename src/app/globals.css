@@ -1,6 +1,11 @@
- :root {
+:root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary-color: #FFDE00;
+  --secondary-color: #FF0000;
+  --tertiary-color: #00A7E1;
+  --neutral-color: #0F0F12;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +18,7 @@
 html {
   height: 100%;
 }
+
 /*
 html,
 body {
