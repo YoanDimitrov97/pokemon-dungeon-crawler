@@ -1,13 +1,14 @@
-import { EnemyPokemon } from "@/types/pokemon.types";
+import { EnemyPokemon, PokemonType } from "@/types/pokemon.types";
 import styles from "./EnemyDisplay.module.css";
 import Image from "next/image";
+import { typeColorMap } from "@/pokemon/typeColorMap";
 
 
 
-export default function EnemyDisplay({enemy}: {enemy: EnemyPokemon}){
-    return(
+export default function EnemyDisplay({ enemy }: { enemy: EnemyPokemon }) {
+    return (
         <div className={styles.enemyContainer}>
-            
+
             <div className={styles.enemySprite}>
                 <Image
                     src={enemy.sprite_url}
@@ -25,8 +26,23 @@ export default function EnemyDisplay({enemy}: {enemy: EnemyPokemon}){
                 <span className={styles.enemyLevelSpan}>Lv. {enemy.level}</span>
             </div>
 
-            <div className={styles.enemyStatus}>
-                <span className={styles.enemyStatusSpan}>Normal</span>
+            <div className={styles.enemyTypes}>
+                {enemy.primary_type && (
+                    <span
+                        className={styles.enemyTypeSpan}
+                        style={{ backgroundColor: typeColorMap[enemy.primary_type] }}
+                    >
+                        {enemy.primary_type}
+                    </span>
+                )}
+                {enemy.secondary_type && (
+                    <span
+                        className={styles.enemyTypeSpan}
+                        style={{ backgroundColor: typeColorMap[enemy.secondary_type] }}
+                    >
+                        {enemy.secondary_type}
+                    </span>
+                )}
             </div>
 
             <div className={styles.enemyHealth}>
