@@ -32,7 +32,7 @@ export const POKEDEX = {
         id: 4,
         name: "Charmander",
         level: 1,
-        sprite_url: 'fill later',
+        sprite_url: 'https://play.pokemonshowdown.com/sprites/gen5/charmander.png',
         base_stats: {
             hp: 39,
             attack: 56,

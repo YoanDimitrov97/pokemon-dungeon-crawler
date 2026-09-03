@@ -7,6 +7,20 @@
     /* overflow: hidden; */
 }
 
+.wipWarning {
+    position: absolute;
+    background-color: yellow;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 6;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+
 .bgTexture {
   position: fixed;
   inset: 0;
@@ -41,13 +55,19 @@
  @media (max-width: 1366px){
     width: 45vw;
  }
- overflow: hidden;
+
+ @media (max-width: 971px){
+  width: 100vw;
+ background-color: color-mix(in srgb, var(--background) 12%, transparent);
+
+ }
  z-index: 5;
  position: relative;
- background-color: var(--background);
+ background-color: color-mix(in srgb, var(--background) 85%, transparent);
 
  display:flex;
  flex-direction: column;
  align-items: center;
+ gap: 15vh;
 }
 
