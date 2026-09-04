@@ -1,0 +1,273 @@
+.login_holder {
+    display:flex;
+    flex-direction: column;
+    height:100vh;
+    justify-content: center;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.brand_title {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.brand_sub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+}
+
+
+/* ============================================
+   GLASS PANEL (Container)
+   ============================================ */
+.glass_panel {
+  background: rgba(31, 31, 34, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+  max-width: 28rem;
+  width: 100%;
+  margin: 0 auto;
+  display:flex;
+  flex-direction: column;
+
+}
+
+/* ============================================
+   FORM
+   ============================================ */
+.login_form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+/* ---- Form Labels ---- */
+.form_label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lineheight);
+  letter-spacing: var(--text-label-letter);
+  font-weight: var(--text-label-weight);
+  color: var(--color-on-surface-variant);
+  margin-bottom: var(--spacing-base);
+  text-transform: uppercase;
+}
+
+/* ---- Input Fields ---- */
+.input_field {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-outline-variant);
+  outline: none;
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-lineheight);
+  font-weight: var(--text-body-weight);
+  padding: var(--spacing-xs) 0;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input_field:focus {
+  border-color: var(--color-primary-fixed-dim);
+  box-shadow: 0 1px 0 0 var(--color-primary-fixed-dim);
+}
+
+.input_field::placeholder {
+  color: var(--color-surface-container-highest);
+}
+
+/* Flicker animation on focus */
+.flicker_focus:focus {
+  animation: flicker 0.2s ease-in-out 3;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+/* ============================================
+   LOGIN BUTTON
+   ============================================ */
+.login_btn {
+  width: 100%;
+  background: rgba(255, 222, 0, 0.2);
+  border: 1px solid rgba(227, 198, 0, 0.5);
+  color: var(--color-primary-fixed-dim);
+  font-family: var(--font-body);
+  font-size: var(--text-title-size);
+  line-height: var(--text-title-lineheight);
+  letter-spacing: var(--text-title-letter);
+  font-weight: var(--text-title-weight);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-default);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-xs);
+  text-transform: uppercase;
+  margin-top: var(--spacing-sm);
+}
+
+.login_btn:hover:not(:disabled) {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+}
+
+.login_btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.login_btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================
+   DIVIDER TEXT
+   ============================================ */
+.divider_text {
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lineheight);
+  letter-spacing: var(--text-label-letter);
+  font-weight: var(--text-label-weight);
+  color: var(--color-on-surface-variant);
+  text-transform: uppercase;
+  text-align: center;
+  margin: var(--spacing-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.divider_text::before,
+.divider_text::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--color-outline-variant);
+}
+
+/* ============================================
+   SOCIAL GRID
+   ============================================ */
+.social_grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   SOCIAL BUTTON
+   ============================================ */
+.social_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  padding: var(--space-xs) var(--spacing-xs);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-default);
+  background: transparent;
+  color: var(--color-on-surface);
+  font-family: var(--font-mono);
+  font-size: var(--text-label-size);
+  line-height: var(--text-label-lineheight);
+  letter-spacing: var(--text-label-letter);
+  font-weight: var(--text-label-weight);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  text-transform: uppercase;
+  width: 100%;
+  min-height:52px;
+}
+
+.social_btn:hover:not(:disabled) {
+  background: var(--color-surface-container-highest);
+}
+
+.social_btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Discord specific hover */
+.social_btn_discord:hover:not(:disabled) {
+  background: rgba(88, 101, 242, 0.2);
+  border-color: #5865F2;
+  color: #5865F2;
+}
+
+/* ============================================
+   ERROR MESSAGE
+   ============================================ */
+.error_message {
+  color: var(--color-error);
+  font-family: var(--font-body);
+  font-size: var(--text-body-size);
+  text-align: center;
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-default);
+  background: rgba(147, 0, 10, 0.2);
+  border: 1px solid rgba(255, 180, 171, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 480px) {
+  .glass_panel {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-lg);
+  }
+
+  .login_btn {
+    font-size: 1rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .social_grid {
+    gap: var(--spacing-xs);
+  }
+
+  .social_btn {
+    font-size: 10px;
+    padding: var(--spacing-xs);
+  }
+}
+
+@media (min-width: 640px) {
+  .glass_panel {
+    padding: var(--spacing-md);
+  }
+}
