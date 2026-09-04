@@ -1,0 +1,15 @@
+.emptyBox{
+    border: 0.5px dashed gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+
+    width: 65px;
+    height: 69px;
+    border-radius: var(--rounded-lg);
+    background-color: #222222;
+    color: gray;
+
+    opacity: 0.6;
+}

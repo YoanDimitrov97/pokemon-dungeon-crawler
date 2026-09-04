@@ -1,0 +1,43 @@
+.partyContainer{
+    max-width: 80%;
+    width: max-content;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.partyContainerHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 0.2rem;
+}
+
+.activePokemonSpan{
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.managePartySpan{
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--primary-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.managePartySpan:hover{
+    color: color-mix(in srgb, var(--primary-color) 80%, black);
+}
+
+.partyRow {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    border-radius: 0.5em;
+    align-items: center;
+    justify-content: center;
+}

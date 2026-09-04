@@ -17,8 +17,8 @@ export interface BaseStats {
 }
 
 export interface CurrentStats {
-    current_hp: number;
-    overshield?: number | null;
+    hp: number;
+    overshield?: number;
 }
 
 export interface BattleMoves {
@@ -38,6 +38,7 @@ export interface GenericPokemon {
     sprite_url: string;
 
     base_stats: BaseStats;
+    current_stats: CurrentStats;
     moves: BattleMoves;
 
 
@@ -50,11 +51,12 @@ export interface GenericPokemon {
     is_mythical: boolean;
     is_special: boolean;
     is_shiny: boolean;
+
+    exp_group: EXP_ENUM;
 }
 
 export interface PlayerPokemon extends GenericPokemon {
     current_exp: number;
-    exp_group: EXP_ENUM;
     held_item: string | null;
 }
 
