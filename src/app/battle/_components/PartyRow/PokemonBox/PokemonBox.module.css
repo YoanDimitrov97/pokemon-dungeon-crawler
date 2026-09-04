@@ -1,0 +1,35 @@
+.pokemonBox{
+    border: 0.5px solid gray;
+    border-top: 1px solid var(--primary-color);
+    /* border-top: 1px solid color-mix(in srgb, var(--primary-color) 70%, black); */
+    border-radius: var(--rounded-lg);
+    background-color: #222222;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+}
+.hpContainer{
+    display:flex;
+    flex-direction: row;
+    gap: 2px;
+    width: 80%;
+    padding-bottom: 6px;
+}
+
+.hpSegment{
+    flex:1;
+    height: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.hpSegmentFilled{
+    background-color: #E03030;
+    box-shadow: 0 0 4px #e03030;
+}
+
+.hpSegmentEmpty{
+    background-color: #3a3a3a;
+}

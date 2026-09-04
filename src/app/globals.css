@@ -7,6 +7,25 @@
 
 /* ----- 2. ROOT VARIABLES (design tokens) ----- */
 :root {
+  --background: #ffffff;
+  --foreground: #131316;
+
+  --primary-color: #FFDE00;
+  --secondary-color: #FF0000;
+  --tertiary-color: #00A7E1;
+  --neutral-color: #0F0F12;
+
+
+  --rounded-sm: 0.125rem;
+  --rounded-lg: 0.25rem;
+  --rounded-xl: 0.5rem;
+  --rounded-full: 9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #131316;
+    --foreground: #ededed;
   /* ---- COLORS (from the spec) ---- */
   --color-surface: #131316;
   --color-surface-dim: #131316;
@@ -159,6 +178,11 @@ body {
   letter-spacing: var(--font-title-md-spacing);
 }
 
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
 .body-base {
   font-family: var(--font-family-geist);
   font-size: var(--font-body-base-size);
