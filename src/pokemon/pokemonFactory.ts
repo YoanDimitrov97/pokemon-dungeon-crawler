@@ -11,6 +11,7 @@ export function pokemonFactory(data: SpeciesInput): GenericPokemon {
         is_mythical: false,
         is_special: false,
         is_shiny: false,
+        cost:null,
         ...data
     };
 }

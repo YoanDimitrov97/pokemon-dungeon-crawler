@@ -33,6 +33,7 @@ export interface GenericPokemon {
     name: string;
 
     level: number;
+    cost:number | null;
 
     sprite_url: string;
 

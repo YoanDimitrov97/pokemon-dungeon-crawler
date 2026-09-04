@@ -20,7 +20,7 @@ export default function SignUpForm() {
       name: form.name,
       email: form.email,
       password: form.password,
-      callbackURL: "/dashboard",
+      callbackURL: "/play",
     });
 
     setLoading(false);
@@ -28,7 +28,7 @@ export default function SignUpForm() {
       setError(error.message ?? "Something went wrong");
       return;
     }
-    router.push("/dashboard");
+    router.push("/play");
   };
  return (
     <main className={css.main_container}>

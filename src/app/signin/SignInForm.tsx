@@ -18,7 +18,7 @@ export default function SignInForm() {
     const { error } = await signIn.email({
       email: form.email,
       password: form.password,
-      callbackURL: "/dashboard",
+      callbackURL: "/play",
     });
 
     setLoading(false);
@@ -26,7 +26,7 @@ export default function SignInForm() {
       setError(error.message ?? "Invalid credentials");
       return;
     }
-    router.push("/dashboard");
+    router.push("/play");
   };
 
   return (

@@ -1,0 +1,4 @@
+.pokemon_selection_holder {
+ display:flex;
+ gap:10px;   
+}

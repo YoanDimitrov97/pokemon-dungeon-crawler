@@ -2,8 +2,9 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import LogoutButton from "@/components/LogoutButton";
+import PokemonSelectionGrid from "@/components/PokemonSelectionGrid";
 
-export default async function Dashboard() {
+export default async function Play() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -14,6 +15,8 @@ export default async function Dashboard() {
     <div>
       <h1>Welcome, {session.user.name}</h1>
       <LogoutButton />
+
+      <PokemonSelectionGrid></PokemonSelectionGrid>
     </div>
   );
 }

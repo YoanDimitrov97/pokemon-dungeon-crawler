@@ -9,7 +9,7 @@ export default async function SignUpPage() {
     headers: await headers(),
   });
 
-  if (session) redirect("/dashboard");
+  if (session) redirect("/play");
 
   return <SignUpForm />;
 }
